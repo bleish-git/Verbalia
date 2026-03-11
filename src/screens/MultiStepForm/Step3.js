@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: theme.spacing.lg,
-    backgroundColor: theme.colors.background
+    backgroundColor: theme.colors.background,
+    gap: 5
   },
 
   input: {

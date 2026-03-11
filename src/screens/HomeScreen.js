@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import {
   View,
   TextInput,
@@ -6,25 +6,22 @@ import {
   TouchableOpacity,
   Text
 } from 'react-native';
+import { AuthContext } from '../services/AuthContext';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { theme } from '../theme/theme';
 
-export default function HomeScreen({ navigation }) {
+
+export default function HomeScreen() {
   const insets = useSafeAreaInsets();
+  const { user, logout } = useContext(AuthContext);
+
   return (
     <View style={[styles.container, { paddingTop: insets.top } ]} >
-      <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('SimpleForm')}
-                  >
-        <Text style={styles.buttonText}>Form Semplice</Text>
-      </TouchableOpacity>
-      <Text> </Text>
-      <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('Step1')}
-                  >
-        <Text style={styles.buttonText}>Form Multi-Step</Text>
+      <Text>Ciao {user.name}</Text>
+      <Text>Email: {user.email}</Text>
+
+      <TouchableOpacity onPress={logout}>
+        <Text>Logout</Text>
       </TouchableOpacity>
     </View>
   );
@@ -34,7 +31,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: theme.spacing.lg,
-    backgroundColor: theme.colors.background
+    backgroundColor: theme.colors.background,
+    gap: 5
   },
 
   input: {
@@ -66,5 +64,9 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600'
+  },
+
+  buttonDanger: {
+    backgroundColor: '#DC2626',
   }
 });

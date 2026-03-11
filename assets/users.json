@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2b$10$vpGRYj1f.8GuhP9k3PPUTuUPI.jS811gX8mMKPqAohlNLCMIyc0Tu",
+      "email": "admin@facac.io",
+      "name": "Admin"
+    },
+    {
+      "username": "mrossi",
+      "password": "$2b$10$vpGRYj1f.8GuhP9k3PPUTuUPI.jS811gX8mMKPqAohlNLCMIyc0Tu",
+      "email": "mrossi@liberp.io",
+      "name": "Mario Rossi"
+    }
+  ]
+}
